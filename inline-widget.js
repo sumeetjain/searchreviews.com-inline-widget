@@ -1,6 +1,6 @@
 // Settings include:
-// - width
-// - height
+// - width*
+// - height*
 // - font
 // - font-size
 // - color
@@ -8,6 +8,9 @@
 // - whether to show a search box
 
 window.onload = function(){
+	var widgetFrameWidth = '350px';
+	var widgetFrameHeight = '475px';
+	
 	var widgetContainer = document.createElement('div');
 	widgetContainer.className = 'searchReviewsInlineWidget';
 	
@@ -19,12 +22,13 @@ window.onload = function(){
 	
 	var widgetFrame = document.createElement('iframe');
 	widgetFrame.src = 'inline-widget.html';
-	widgetFrame.style.width = '350px';
-	widgetFrame.style.height = '475px';
+	widgetFrame.style.width = widgetFrameWidth;
+	widgetFrame.style.height = widgetFrameHeight;
 	widgetFrame.style.border = '1px solid #ccc';
 	widgetFrame.style.marginBottom = '6px';
 	
 	widgetContainer.appendChild(widgetFrame);
 	widgetContainer.appendChild(widgetLink);
-	document.getElementsByTagName('body')[0].appendChild(widgetContainer);
+	var src = document.getElementById('searchReviewsInlineWidgetRef');
+	src.parentNode.insertBefore(widgetContainer, src);
 }
