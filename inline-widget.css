@@ -17,6 +17,8 @@ body{
 	zoom: 1; /* IE < 8 */
 }
 
+/* This declaration isn't used, but keep it around. */
+/* It can be placed at the top of the page as a discrete header. */
 #header{
 	display: block;
 	font-weight: bold;
@@ -27,7 +29,7 @@ body{
 
 #search{
 	text-align: center;
-	margin: 0 0 12px;
+	margin: 4px 0 12px;
 }
 #search #query{
 	border: 1px solid #ccc;
