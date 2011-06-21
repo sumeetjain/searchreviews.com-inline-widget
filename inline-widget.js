@@ -22,6 +22,7 @@ window.onload = function(){
 	
 	var widgetFrame = document.createElement('iframe');
 	widgetFrame.src = 'inline-widget.html';
+	widgetFrame.scrolling = 'no';
 	widgetFrame.style.width = widgetFrameWidth;
 	widgetFrame.style.height = widgetFrameHeight;
 	widgetFrame.style.border = '1px solid #ccc';

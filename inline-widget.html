@@ -10,92 +10,96 @@
 </head>
 <body>
 	
-	<form id="search">
-		<input type="text" id="query" name="query" value="iphone5" size="25" />
-		<input type="submit" value="Search Reviews" />
-	</form>
-	
-	<ul id="pagination">
-		<li><a href="#">1</a></li>
-		<li class="current"><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">5</a></li>
-		<li><a href="#">6</a></li>
-		<li><a href="#">7</a></li>
-		<li><a href="#">8</a></li>
-		<li><a href="#">9</a></li>
-		<li><a href="#">10</a></li>
-		<li><a href="#">11</a></li>
-		<li><a href="#">12</a></li>
-	</ul>
-	
-	<!-- Review #1 -->
-	<div class="review">
-		<h1><a href="#">A revolutionary new product</a></h1>
+	<div id="header" class="clearfix">
+		<ul id="pagination">
+			<li><a href="#">1</a></li>
+			<li class="current"><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">6</a></li>
+			<li><a href="#">7</a></li> - 
+			<li><a href="#">12</a></li>
+		</ul>
 		
-		<div class="subtitle clearfix">
-			<div class="rating clearfix">
-				<span class="star positiveStar"></span>
-				<span class="star positiveStar"></span>
-				<span class="star positiveStar"></span>
-				<span class="star"></span>
-				<span class="star"></span>
-			</div>
-
-			<div class="source">www.mysears.com, by SHC-AlexO, Chicago, IL | Sep 13, 2009 @ 12:00 AM</div>
-		</div>
-		
-		<div class="content clearfix">
-			<a href="#"><img src="http://placekitten.com/75/40" class="reviewPhoto" /></a>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt aliqua quis nostrud... <a href="#" class="readLink" title="Read more">Read more.</a></p>
-		</div>
+		<form id="search" class="clearfix">
+			<input type="image" id="submit" name="submit" src="search.png" value="Search Reviews" />
+			<input type="text" id="query" name="query" value="iphone5" />
+		</form>
 	</div>
 	
-	<!-- Review #2 -->
-	<div class="review">
-		<h1><a href="#">They totally copied the Zune.</a></h1>
+	<div id="container">
 		
-		<div class="subtitle clearfix">
-			<div class="rating clearfix">
-				<span class="star positiveStar"></span>
-				<span class="star positiveStar"></span>
-				<span class="star positiveStar"></span>
-				<span class="star"></span>
-				<span class="star"></span>
+		<!-- Review #1 -->
+		<div class="review">
+			<h1><a href="#">A revolutionary new product</a></h1>
+			<h2>Apple iPhone 5</h2>
+
+			<div class="subtitle clearfix">
+				<div class="rating clearfix">
+					<span class="star positiveStar"></span>
+					<span class="star positiveStar"></span>
+					<span class="star positiveStar"></span>
+					<span class="star"></span>
+					<span class="star"></span>
+				</div>
+
+				<div class="source">www.mysears.com, by SHC-AlexO, Chicago, IL | Sep 13, 2009 @ 12:00 AM</div>
 			</div>
 
-			<div class="source">amazon.com, by Susie Q, New York, NY</div>
-		</div>
-		
-		<div class="content clearfix">
-			<a href="#"><img src="http://placekitten.com/75/40" class="reviewPhoto" /></a>
+			<div class="content clearfix">
+				<a href="#"><img src="http://placekitten.com/75/40" class="reviewPhoto" /></a>
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt aliqua quis nostrud. Lorem ipsum dolor susmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.... <a href="#" class="readLink" title="Read more">Read more.</a></p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt aliqua quis nostrud... <a href="#" class="readLink" title="Read more">Read more.</a></p>
+			</div>
 		</div>
-	</div>
-	
-	<!-- Review #3 -->
-	<div class="review lastReview">
-		<h1><a href="#">I've never listened to music so much as I do now - love it!</a></h1>
-		
-		<div class="subtitle clearfix">
-			<div class="rating clearfix">
-				<span class="star positiveStar"></span>
-				<span class="star positiveStar"></span>
-				<span class="star positiveStar"></span>
-				<span class="star"></span>
-				<span class="star"></span>
+
+		<!-- Review #2 -->
+		<div class="review">
+			<h1><a href="#">They totally copied the Zune.</a></h1>
+			<h2>Apple's iPhone 5</h2>
+
+			<div class="subtitle clearfix">
+				<div class="rating clearfix">
+					<span class="star positiveStar"></span>
+					<span class="star positiveStar"></span>
+					<span class="star positiveStar"></span>
+					<span class="star"></span>
+					<span class="star"></span>
+				</div>
+
+				<div class="source">amazon.com, by Susie Q, New York, NY</div>
 			</div>
 
-			<div class="source">amazon.com, by John, Chicago, IL</div>
-		</div>
-		
-		<div class="content clearfix">
-			<a href="#"><img src="http://placekitten.com/75/40" class="reviewPhoto" /></a>
+			<div class="content clearfix">
+				<a href="#"><img src="http://placekitten.com/75/40" class="reviewPhoto" /></a>
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt aliqua quis nostrud... <a href="#" class="readLink" title="Read more">Read more.</a></p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt aliqua quis nostrud. Lorem ipsum dolor susmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.... <a href="#" class="readLink" title="Read more">Read more.</a></p>
+			</div>
+		</div>
+
+		<!-- Review #3 -->
+		<div class="review lastReview">
+			<h1><a href="#">I've never listened to music so much as I do now - love it!</a></h1>
+			<h2>The New Apple iPhone 5</h2>
+
+			<div class="subtitle clearfix">
+				<div class="rating clearfix">
+					<span class="star positiveStar"></span>
+					<span class="star positiveStar"></span>
+					<span class="star positiveStar"></span>
+					<span class="star"></span>
+					<span class="star"></span>
+				</div>
+
+				<div class="source">amazon.com, by John, Chicago, IL</div>
+			</div>
+
+			<div class="content clearfix">
+				<a href="#"><img src="http://placekitten.com/75/40" class="reviewPhoto" /></a>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt aliqua quis nostrud... <a href="#" class="readLink" title="Read more">Read more.</a></p>
+			</div>
 		</div>
 	</div>
 
