@@ -25,6 +25,18 @@ body{
 	color: #666;
 }
 
+#search{
+	text-align: center;
+	margin: 0 0 12px;
+}
+#search #query{
+	border: 1px solid #ccc;
+	padding: 3px 6px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	font-size: 13px;
+}
+
 .review{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
