@@ -39,6 +39,32 @@ body{
 	font-size: 13px;
 }
 
+#pagination{
+	margin: 0 0 12px;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+#pagination li{
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+#pagination a{
+	color: #fff;
+	background: #bbb;
+	padding: 1px 2px;
+	text-decoration: none;
+}
+#pagination a:hover{
+	background: #999;
+}
+#pagination .current a{
+	background: #fff;
+	font-weight: bold;
+	color: #bbb;
+}
+
 .review{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
