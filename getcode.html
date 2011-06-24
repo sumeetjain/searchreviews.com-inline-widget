@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>getcode</title>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		$(function(){			
+			// Initialize the object
+			window.params = {
+				width: '350px',
+				height: '475px'
+			};
+			
+			$("#form :input").change(function(){
+				var key = $(this).attr('id');
+				var value = $(this).val();
+				
+				window.params[key] = value; // Fill up the object with params
+				
+				var codeString = '\<script type="text/javascript" charset="utf-8"\>\nwindow.sr_inline_widget = {';
+				codeString += "\n\twidth: '" + window.params.width + "',";
+				codeString += "\n\theight: '" + window.params.height + "',";
+				codeString += '\n}\n\</script\>\n\n\<script type="text/javascript" src="inline-widget.js" id="searchReviewsInlineWidgetRef"\>\</script\>';
+				
+				$("#codeBlock").val(codeString);
+				
+				$("#previewIframe").css({
+						'width': (parseInt(window.params.width) + 35),
+						'height': (parseInt(window.params.height) + 35)
+					});
+			}).change();
+		});
+	</script>
+	
+	<style type="text/css" media="screen">
+		.clearfix:after{
+			content: ".";
+			display: block;
+			visibility: hidden;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+		}
+		.clearfix{
+			zoom: 1;
+		}
+		
+		#form{
+			width: 450px;
+			margin-right: 100px;
+			float: left;
+		}
+		
+		#preview{
+			float: left;
+		}
+		#previewIframe{
+			border: none;
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body class="clearfix">
+	
+	<div id="form">
+		<form id="inlineWidget">
+			<div class="formItem">
+				<label for="">Width</label>
+				<input type="text" id="width" value="350" />
+			</div>
+			
+			<div class="formItem">
+				<label for="">Height</label>
+				<input type="text" id="height" value="475" />
+			</div>
+		</form>
+
+		<textarea id="codeBlock" rows="20" cols="50">
+
+&lt;script type="text/javascript" src="inline-widget.js" id="searchReviewsInlineWidgetRef"&gt;&lt;/script&gt;
+		</textarea>
+	</div>
+
+	<div id="preview">
+		<iframe src="widgetcode.html" id="previewIframe" scrolling="no"></iframe>
+	</div>
+
+</body>
+</html>

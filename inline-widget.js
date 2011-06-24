@@ -8,8 +8,8 @@
 // - whether to show a search box
 
 window.onload = function(){
-	var widgetFrameWidth = '350px';
-	var widgetFrameHeight = '475px';
+	var widgetFrameWidth = window.sr_inline_widget.width;
+	var widgetFrameHeight = window.sr_inline_widget.height;
 	
 	var widgetContainer = document.createElement('div');
 	widgetContainer.className = 'searchReviewsInlineWidget';
