@@ -53,7 +53,7 @@ window.onload = function(){
 	whatsThis.className = 'searchReviewsInlineWhatsThis';
 	whatsThis.href = '#';
 	whatsThis.innerHTML = "what's this?";
-	whatsThis.title = 'Disclaimer text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+	whatsThis.title = 'These customer reviews and links are keyword-targeted to the current page by SearchReviews.com.  By clicking on links in the SearchReviews widget you will leave the current site.  Both the current site and SearchReviews may receive commission from subsequent purchases.';
 	whatsThis.style.display = 'block';
 	whatsThis.style.clear = "both";
 	whatsThis.style.fontFamily = 'Helvetica';
@@ -88,7 +88,8 @@ window.onload = function(){
 	}
 	
 	var widgetFrame = document.createElement('iframe');
-	widgetFrame.src = 'inline-widget.html';
+	
+	widgetFrame.src = 'inline-widget.html?keywords=' + urlParams['keywords'] + '&font=' + urlParams['font'] + '&fontSize=' + urlParams['fontSize'] + '&titleColor=' + urlParams['titleColor'] + '&productColor=' + urlParams['productColor'] + '&numReviews=' + urlParams['numReviews'] + '&searchBoxYN=' + urlParams['searchBoxYN'] + '';
 	widgetFrame.scrolling = 'no';
 	widgetFrame.style.width = widgetFrameWidth + "px";
 	widgetFrame.style.height = widgetFrameHeight + "px";

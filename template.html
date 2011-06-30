@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Get Inline Widget Code</title>
+	<title>TEMPLATE</title>
 	
 	<link rel="stylesheet" href="http://c448112.r12.cf2.rackcdn.com/css/style.css" type="text/css" media="screen" />
 	
@@ -19,7 +19,7 @@
 				var value = $(this).val();
 
 				window.params[key] = value; // Fill up the object with params
-				var queryString = 'width=' + window.params.width + "&height=" + window.params.height + "&keywords=" + window.params.keywords + "&font=" + window.params.font + "&fontSize=" + window.params.fontSize + "&titleColor=" + window.params.titleColor + "&productColor=" + window.params.productColor + "&numReviews=" + window.params.numReviews + "&searchBoxYN=" + window.params.searchBoxYN;
+				var queryString = 'width=' + window.params.width + "&height=" + window.params.height + "&keywords=" + window.params.keywords;
 				
 				var codeString = '\<script type="text/javascript" src="http://searchreviews.com/widget/widget_inline.jsp?' + queryString + '" id="searchReviewsInlineWidgetRef"\>\</script\>\n\n';
 				codeString += '\<a id="inlineWidgetLink" href="http://searchreviews.com/search.jsp?reviews=' + window.params.keywords + '"\>Reviews for ' + window.params.keywords + '\</a\>'
@@ -37,64 +37,17 @@
 			content: ".";
 			display: block;
 			visibility: hidden;
-			clear: both;
+			width: 0;
 			height: 0;
+			overflow: hidden;
 		}
 		.clearfix{
 			zoom: 1;
 		}
 		
-		label{
-			display: block;
-			font-weight: bold;
-		}
-		.textInput{
-			border: 1px solid #aaa;
-			padding: 1px 2px;
-		}
-		input.textInput{
-			width: 90px;
-		}
-		input#keywords{
-			width: 189px;
-		}
-	
 		#form{
-			background: #eee;
-			border: 1px solid #ccc;
-			padding: 10px;
-			width: 840px;
 		}
 		
-		#row1, #row2, #row3{
-			margin: 0 0 15px;
-		}
-		.formItem{
-			float: left;
-			margin: 0 15px 0 0;
-		}
-
-		#inlineWidget{
-			float: left;
-			width: 540px;
-		}
-		#codeBlockContainer{
-			float: right;
-		}
-		#codeBlock{
-			width: 260px;
-			height: 115px;
-			font-size: 9px;
-		}
-		
-		#previewContainer{
-			clear: both;
-			padding-top: 20px;
-		}
-		#previewContainer h4{
-			margin: 0 0 10px;
-			border-bottom: 1px solid #ddd;
-		}
 		#previewIframe{
 			border: none;
 			padding: 0;
@@ -130,77 +83,7 @@
 					<div class="widgetContainer"> 
 						<div class="innerContainer"> 
 							<div class="contentTemplate"> 
-								<div id="form" class="clear">
-									<form id="inlineWidget" class="clearfix">
-										<div id="row1" class="clearfix">
-											<div class="formFloater formItem">
-												<label for="keywords">Search Term</label>
-												<input class="textInput" type="text" id="keywords" value="iphone 5" />
-											</div>
-											
-											<div class="formItem">
-												<label for="width">Width</label>
-												<input class="textInput" type="text" id="width" value="840" />
-											</div>
-
-											<div class="formItem">
-												<label for="height">Height</label>
-												<input class="textInput" type="text" id="height" value="475" />
-											</div>
-										</div>
-										
-										<div id="row2" class="clearfix">
-											<div class="formItem">
-												<label for="font">Font</label>
-												<select id="font">
-													<option value="helvetica" selected="selected">Helvetica</option>
-													<option value="georgia">Georgia</option>
-												</select>
-											</div>
-											
-											<div class="formItem">
-												<label for="fontSize">Size</label>
-												<input class="textInput" type="text" id="fontSize" value="12" />
-											</div>
-											
-											<div class="formItem">
-												<label for="titleColor">Link Color</label>
-												<input class="textInput" type="text" id="titleColor" value="blue" />
-											</div>
-
-											<div class="formItem">
-												<label for="productColor">Product Color</label>
-												<input class="textInput" type="text" id="productColor" value="green" />
-											</div>
-										</div>
-							
-										<div id="row3" class="clearfix">
-											<div class="formItem">
-												<label for="numReviews"># of Reviews</label>
-												<input class="textInput" type="text" id="numReviews" value="3" />
-											</div>
-
-											<div class="formItem">
-												<label for="searchBoxYN">Show Search?</label>
-												<select id="searchBoxYN">
-													<option value="yes" selected="selected">Yes</option>
-													<option value="no">No</option>
-												</select>
-											</div>
-										</div>
-									</form>
-									
-									<div id="codeBlockContainer">
-										<label for="codeBlock">Your widget code:</label>
-										<textarea class="textInput" id="codeBlock" rows="20" cols="50"></textarea>
-									</div>
-								</div>
-								
-								<div id="previewContainer">
-									<h4>Widget Preview</h4>
-									<div id="preview">
-									</div>
-								</div>
+								ADD CONTENT HERE.
 							</div> 
 						</div> 
 					</div> 
