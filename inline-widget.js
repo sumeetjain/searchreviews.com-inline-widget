@@ -1,3 +1,5 @@
+// I think this is deprecated by inline-widget-stage.js - or the JSP.
+
 // Settings include:
 // - width*
 // - height*
