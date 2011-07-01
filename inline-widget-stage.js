@@ -6,6 +6,7 @@
 // - color
 // - number of reviews
 // - whether to show a search box
+// - pubId
 
 var urlParams = {};
 (function () {
@@ -89,7 +90,7 @@ window.onload = function(){
 	
 	var widgetFrame = document.createElement('iframe');
 	
-	widgetFrame.src = 'inline-widget.html?keywords=' + urlParams['keywords'] + '&font=' + urlParams['font'] + '&fontSize=' + urlParams['fontSize'] + '&titleColor=' + urlParams['titleColor'] + '&productColor=' + urlParams['productColor'] + '&numReviews=' + urlParams['numReviews'] + '&searchBoxYN=' + urlParams['searchBoxYN'] + '';
+	widgetFrame.src = 'inline-widget.html?keywords=' + urlParams['keywords'] + '&font=' + urlParams['font'] + '&fontSize=' + urlParams['fontSize'] + '&titleColor=' + urlParams['titleColor'] + '&productColor=' + urlParams['productColor'] + '&numReviews=' + urlParams['numReviews'] + '&searchBoxYN=' + urlParams['searchBoxYN'] + '&pubId=' + urlParams['pubId'] + '';
 	widgetFrame.scrolling = 'no';
 	widgetFrame.style.width = widgetFrameWidth + "px";
 	widgetFrame.style.height = widgetFrameHeight + "px";
