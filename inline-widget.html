@@ -9,12 +9,17 @@
 	<link rel="stylesheet" href="inline-widget.css" type="text/css" media="all" title="Searchreviews.com" charset="utf-8">
 	
 	<style type="text/css" media="screen">
-	/* These values will be set by the user. */
+		body{
+			font-family: "Helvetica"; /* JSP: "Font" */
+		}
+		h1{
+			font-size: 14px; /* JSP: "Size" */
+		}
 		h1 a{
-/*			color: pink;*/
+			color: pink; /* JSP: "Link Color" */
 		}
 		h2{
-/*			color: red;*/
+			color: red; /* JSP: "Product Color" */
 		}
 	</style>
 </head>
@@ -32,10 +37,12 @@
 			<li><a href="#">12</a></li>
 		</ul>
 		
+		<!-- JSP: If "Show Search" is "Yes" -->
 		<form id="search" class="clearfix">
 			<input type="image" id="submit" name="submit" src="search.png" value="Search Reviews" />
 			<input type="text" id="query" name="query" value="iphone5" />
 		</form>
+		<!-- /JSP -->
 	</div>
 	
 	<div id="container">
