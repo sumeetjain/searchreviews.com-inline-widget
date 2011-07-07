@@ -90,7 +90,77 @@ window.onload = function(){
 	
 	var widgetFrame = document.createElement('iframe');
 	
-	widgetFrame.src = 'inline-widget.html?keywords=' + urlParams['keywords'] + '&font=' + urlParams['font'] + '&fontSize=' + urlParams['fontSize'] + '&titleColor=' + urlParams['titleColor'] + '&productColor=' + urlParams['productColor'] + '&numReviews=' + urlParams['numReviews'] + '&searchBoxYN=' + urlParams['searchBoxYN'] + '&pubId=' + urlParams['pubId'] + '';
+	// Set keywords, use backups if needed:
+	function sriGetKeywords(){
+		if (urlParams['reviews']){
+			var rawString = urlParams['reviews'];
+		}
+		else{
+			if (document.getElementsByTagName('h1')[0]){
+				if (document.all){
+					var rawString = document.getElementsByTagName('h1')[0].innerText.toLowerCase();
+				}
+				else{
+					var rawString = document.getElementsByTagName('h1')[0].textContent.toLowerCase();
+				}
+			}
+			else if (document.getElementsByTagName('h2')[0]){
+				if (document.all){
+					var rawString = document.getElementsByTagName('h2')[0].innerText.toLowerCase();
+				}
+				else{
+					var rawString = document.getElementsByTagName('h2')[0].textContent.toLowerCase();
+				}
+			}
+			else if (document.getElementsByTagName('h3')[0]){
+				if (document.all){
+					var rawString = document.getElementsByTagName('h3')[0].innerText.toLowerCase();
+				}
+				else{
+					var rawString = document.getElementsByTagName('h3')[0].textContent.toLowerCase();
+				}
+			}
+			else if (document.getElementsByTagName('h4')[0]){
+				if (document.all){
+					var rawString = document.getElementsByTagName('h4')[0].innerText.toLowerCase();
+				}
+				else{
+					var rawString = document.getElementsByTagName('h4')[0].textContent.toLowerCase();
+				}
+			}
+			else if (document.getElementsByTagName('h5')[0]){
+				if (document.all){
+					var rawString = document.getElementsByTagName('h5')[0].innerText.toLowerCase();
+				}
+				else{
+					var rawString = document.getElementsByTagName('h5')[0].textContent.toLowerCase();
+				}
+			}
+			else if (document.getElementsByTagName('h6')[0]){
+				if (document.all){
+					var rawString = document.getElementsByTagName('h6')[0].innerText.toLowerCase();
+				}
+				else{
+					var rawString = document.getElementsByTagName('h6')[0].textContent.toLowerCase();
+				}
+			}
+			else{
+				var metaTags = document.getElementsByTagName('meta');
+				for(var i = metaTags.length - 1; i >= 0; --i){
+
+					if(metaTags[i].name == 'description'){
+						var rawString = metaTags[i].content;
+					}
+				}
+			}
+		}
+		
+		var cleanString = rawString.replace(/reviews/g, "").replace(/review/g, "");
+		return cleanString;
+	}
+	
+	widgetFrame.src = 'http://searchreviews.com/widget/widget_inline_display.jsp?reviews=' + sriGetKeywords() + '&font=' + urlParams['font'] + '&fontSize=' + urlParams['fontSize'] + '&titleColor=' + urlParams['titleColor'] + '&productColor=' + urlParams['productColor'] + '&numReviews=' + urlParams['numReviews'] + '&searchBoxYN=' + urlParams['searchBoxYN'] + '&pubId=' + urlParams['pubId'] + '';
+	alert(widgetFrame.src);
 	widgetFrame.scrolling = 'no';
 	widgetFrame.style.width = widgetFrameWidth + "px";
 	widgetFrame.style.height = widgetFrameHeight + "px";

@@ -14,29 +14,33 @@
 		$(function(){
 			window.params = {};
 			
-			$("#form :input").change(function(){
+			$("#inlineWidget").submit(function(e){
 				
+				$(this).find(':input').each(function(){
+					var key = $(this).attr('id');
+					var value = $(this).val();
+					
+					window.params[key] = value; // Fill up the object with params
+				});
 				
-				var key = $(this).attr('id');
-				var value = $(this).val();
-
-				window.params[key] = value; // Fill up the object with params
-				var queryString = 'width=' + window.params.width + "&height=" + window.params.height + "&keywords=" + window.params.keywords + "&font=" + window.params.font + "&fontSize=" + window.params.fontSize + "&titleColor=" + window.params.titleColor + "&productColor=" + window.params.productColor + "&numReviews=" + window.params.numReviews + "&searchBoxYN=" + window.params.searchBoxYN + "&pubId=" + window.params.pubId;
+				var queryString = 'width=' + window.params.width + "&height=" + window.params.height + "&reviews=" + window.params.reviews + "&font=" + window.params.font + "&fontSize=" + window.params.fontSize + "&titleColor=" + window.params.titleColor + "&productColor=" + window.params.productColor + "&numReviews=" + window.params.numReviews + "&searchBoxYN=" + window.params.searchBoxYN + "&pubId=" + window.params.pubId;
 				
 				var codeString = '\<script type="text/javascript" src="http://searchreviews.com/widget/widget_inline.jsp?' + queryString + '" id="searchReviewsInlineWidgetRef"\>\</script\>\n\n';
-				codeString += '\<a id="inlineWidgetLink" href="http://searchreviews.com/search.jsp?reviews=' + window.params.keywords + '"\>Reviews for ' + window.params.keywords + '\</a\>'
+				codeString += '\<a id="inlineWidgetLink" href="http://searchreviews.com/search.jsp?reviews=' + window.params.reviews + '"\>Reviews for ' + window.params.reviews + '\</a\>'
 
 				$("#codeBlock").val(codeString);
 				
-				$("#preview").html('<iframe src="inline-widget-stage.html?' + queryString + '" id="previewIframe" scrolling="no"></iframe>');
-			}).change();
-			
-			$("#inlineWidget").submit(function(e){
-				$("#form :input").change();
+				$("#preview").html('<iframe src="http://searchreviews.com/widget/widget_inline_stage.jsp?' + queryString + '" id="previewIframe" scrolling="no"></iframe>');
 				
 				e.preventDefault();
+			}).submit();
+			
+			$("#codeBlock").focus(function(){
+				$(this).select();
+			})
+			.mouseup(function(e){
+				e.preventDefault();
 			});
-						
 		});
 	</script>
 	
@@ -63,7 +67,7 @@
 		input.textInput{
 			width: 90px;
 		}
-		input#keywords{
+		input#reviews{
 			width: 189px;
 		}
 		
@@ -159,8 +163,8 @@
 									<form id="inlineWidget" class="clearfix">
 										<div id="row1" class="clearfix">
 											<div class="formFloater formItem">
-												<label for="keywords">Search Term</label>
-												<input class="textInput" type="text" id="keywords" value="iphone 5" />
+												<label for="reviews">Search Term</label>
+												<input class="textInput" type="text" id="reviews" value="iphone 5" />
 											</div>
 											
 											<div class="formItem">
